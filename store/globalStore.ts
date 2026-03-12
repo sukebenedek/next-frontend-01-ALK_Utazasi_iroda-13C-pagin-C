@@ -1,23 +1,33 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 
-type GlobalStore = {
-  id: number | null;
-  setId: (newId: number | null) => void;
+// Define the shape of t
+// he global state
+type GlobalStateData = {
+  numberOfRecords: number;
+  numberOfPages: number;
+  actualPage: number;
+  searchTerm: string;
 };
 
-export const useGlobalStore = create<GlobalStore>()(
-  persist(
-    (set) => ({
-      id: null,
-      // A set függvény itt egy új állapotobjektumot ad vissza
-      setId: (newId) =>
-        set(() => ({
-          // A visszatérési érték egy új objektum, ami az előző state-ből és a módosításokból áll
-          id: newId,
-        })),
-    }),
-    { name: "global-store" }, // kulcs-érték párok a böngészó local storage-ben tárolódnak, így csak CSR esetén használható
-  ),
-);
-// persist használata miatt a store állapota megmarad a böngésző újraindításakor is
+type GlobalStore = {
+  gs: GlobalStateData;
+  set: <K extends keyof GlobalStateData>(key: K, value: GlobalStateData[K]) => void;
+};
+
+export const useGlobalStore = create<GlobalStore>()((set) => ({
+  // Initialize the global state:
+  gs: {
+    numberOfPages: 0,
+    numberOfRecords: 0,
+    actualPage: 1,
+    searchTerm: "tenger"
+  },
+
+  set: (key, value) =>
+    set((state) => ({
+      gs: {
+        ...state.gs,
+        [key]: value,
+      },
+    })),
+}));

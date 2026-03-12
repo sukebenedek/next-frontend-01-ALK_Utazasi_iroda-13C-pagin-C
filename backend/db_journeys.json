@@ -89,11 +89,11 @@
       "id": 1,
       "type": "repülőgép"
     },
-    "country": "Olaszország",
-    "description": "Olaszország a kontrasztok és az életélvezet hazája, ahol a történelem minden utcasarkon megelevenedik. Az ország az UNESCO világörökségi helyszínek számát tekintve világelső, így nem csoda, hogy évente több tízmillió turista keresi fel. Északon az Alpok hófödte csúcsai és a modern milánói elegancia dominál, míg délen a Nápolyi-öböl kaotikus bája és Szicília tüzes vére várja az utazókat. A 'Dolce Vita' életérzés nem csupán egy kifejezés, hanem a mindennapok része, legyen szó egy toszkán dűlőn elköltött borozásról vagy a római Colosseum monumentális látványáról. Olaszország konyhája világszerte hódít, de az autentikus ízeket csak helyben, a családi trattoriákban lehet igazán megtapasztalni. A félsziget alakja és a háromezer kilométernyi tengerpart garantálja, hogy a sós tengeri levegő szinte bárhol elérhető legyen.",
+    "country": "Tunézia",
+    "description": "Tunézia a kontrasztok és az életélvezet hazája, ahol a történelem minden utcasarkon megelevenedik. Az ország az UNESCO világörökségi helyszínek számát tekintve világelső, így nem csoda, hogy évente több tízmillió turista keresi fel. Északon az Alpok hófödte csúcsai és a modern milánói elegancia dominál, míg délen a Nápolyi-öböl kaotikus bája és Szicília tüzes vére várja az utazókat. A 'Dolce Vita' életérzés nem csupán egy kifejezés, hanem a mindennapok része, legyen szó egy toszkán dűlőn elköltött borozásról vagy a római Colosseum monumentális látványáról. Tunézia konyhája világszerte hódít, de az autentikus ízeket csak helyben, a családi trattoriákban lehet igazán megtapasztalni. A félsziget alakja és a háromezer kilométernyi tengerpart garantálja, hogy a sós tengeri levegő szinte bárhol elérhető legyen.",
     "departure": "2024-12-05",
     "capacity": 180,
-    "pictureUrl": "https://nits68.github.io/static/utazasi-iroda/italy.jpg"
+    "pictureUrl": "https://nits68.github.io/static/utazasi-iroda/tunesia.jpg"
   },
   {
     "id": 9,
@@ -101,10 +101,10 @@
       "id": 2,
       "type": "busz"
     },
-    "country": "Horvátország",
-    "description": "Horvátország az Adria ékköve, ahol a kristálytiszta kék tenger és a fehér sziklák találkozása lenyűgöző látványt nyújt. Az ország több mint ezer szigettel rendelkezik, melyek közül Krk, Hvar és Brač a legnépszerűbbek a hajósok és a pihenni vágyók körében. Történelme során rómaiak, velenceiek és a Habsburgok is rányomták bélyegüket az építészetre, amit Dubrovnik óvárosának falai vagy Splitben Diocletianus palotája őriz mind a mai napig. A természet szerelmeseit a Plitvicei-tavak vízesései és a nemzeti parkok buja zöldje kápráztatja el. A mediterrán éghajlatnak köszönhetően a nyár forró és hosszú, a tengerparti városok pedig éjszaka telnek meg igazán élettel, amikor a kikötőkben friss tengeri ételek illata száll a levegőben.",
+    "country": "Portugália",
+    "description": "Portugália az Adria ékköve, ahol a kristálytiszta kék tenger és a fehér sziklák találkozása lenyűgöző látványt nyújt. Az ország több mint ezer szigettel rendelkezik, melyek közül Krk, Hvar és Brač a legnépszerűbbek a hajósok és a pihenni vágyók körében. Történelme során rómaiak, velenceiek és a Habsburgok is rányomták bélyegüket az építészetre, amit Dubrovnik óvárosának falai vagy Splitben Diocletianus palotája őriz mind a mai napig. A természet szerelmeseit a Plitvicei-tavak vízesései és a nemzeti parkok buja zöldje kápráztatja el. A mediterrán éghajlatnak köszönhetően a nyár forró és hosszú, a tengerparti városok pedig éjszaka telnek meg igazán élettel, amikor a kikötőkben friss tengeri ételek illata száll a levegőben.",
     "departure": "2024-09-15",
     "capacity": 50,
-    "pictureUrl": "https://nits68.github.io/static/utazasi-iroda/croatia.jpg"
+    "pictureUrl": "https://nits68.github.io/static/utazasi-iroda/portugal.jpg"
   }
 ]

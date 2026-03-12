@@ -24,5 +24,8 @@
     "**/app/**/page.tsx" : "${dirname} - Page",
     "**/app/**/layout.tsx" : "${dirname} - Layout",
     "**/components/**/index.tsx" : "${dirname} - Component",
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   }
 }
