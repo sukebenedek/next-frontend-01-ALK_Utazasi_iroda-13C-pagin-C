@@ -45,7 +45,7 @@ export default function PaginationExamplePage() {
         <div className="justify-top flex flex-col items-center px-10">
             {/* Input serch term */}
             <div className="m-3 w-100">
-                <label className="input">
+                <label className="input text-xl">
                     <Search className="input-icon" />
                     <input
                         placeholder="Keresés..."
@@ -61,47 +61,58 @@ export default function PaginationExamplePage() {
             {JSON.stringify(locations)}
             <div className="overflow-hidden rounded-xl bg-blue-200 shadow-md w-full m-5" >
                 <div className="table-responsive p-4">
-                    <table className="table table-hover align-middle">
-                        <thead className="table-light">
-                            <tr>
-                                <th>Ország</th>
-                                <th>Jármű</th>
-                                <th>Indulás</th>
-                                <th>Férőhely</th>
-                                <th>Leírás</th>
-                                <th>Kép</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {locations.map((l) => (
-                                <tr key={l.id}>
-                                    <td className="fw-bold text-primary">{l.country}</td>
-                                    <td>
-                                        <span className="badge bg-info text-dark">
-                                            {l.vehicle.type}
-                                        </span>
-                                    </td>
-                                    <td>{l.departure.toString()}</td>
-                                    <td>{l.capacity} fő</td>
-                                    <td style={{ maxWidth: '300px' }}>
-                                        <p className="text-muted mb-0 small lh-base">
-                                            {l.description.substring(0, 120)}...
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <Image
-                                            alt={l.country}
-                                            className="rounded shadow-sm"
-                                            height={100}
-                                            src={l.pictureUrl}
-                                            style={{ width: '300px', height: '200px', objectFit: 'cover' }}
-                                            width={100}
-                                        />
-                                    </td>
+                    <div className="overflow-x-auto">
+                        <table className="table w-full">
+                            <thead>
+                                <tr className="text-sm">
+                                    <th>Ország</th>
+                                    <th>Jármű</th>
+                                    <th>Indulás</th>
+                                    <th>Férőhely</th>
+                                    <th>Leírás</th>
+                                    <th>Kép</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+
+                            <tbody>
+                                {locations.map((l) => (
+                                    <tr className="hover" key={l.id}>
+                                        <td className="font-semibold text-2xl  whitespace-nowrap">
+                                            {l.country}
+                                        </td>
+
+                                        <td>
+                                            <span className="text-xl">
+                                                {l.vehicle.type}
+                                            </span>
+                                        </td>
+
+                                        <td className="text-xl whitespace-nowrap">
+                                            {new Date(l.departure).toLocaleDateString()}
+                                        </td>
+
+                                        <td className="text-xl">
+                                            {l.capacity} fő
+                                        </td>
+
+                                        <td className="max-w-xs text-sm text-base-content/70">
+                                            {l.description.substring(0, 500)}...
+                                        </td>
+
+                                        <td>
+                                            <Image
+                                                alt={l.country}
+                                                className="rounded-lg object-cover"
+                                                height={200}
+                                                src={l.pictureUrl}
+                                                width={300}
+                                            />
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
             </div>
