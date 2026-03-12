@@ -1,0 +1,213 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Jedlik REST API Server for 'Á.L.K. Utazási iroda'",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": ""
+    }
+  ],
+  "tags": [
+    {
+      "name": "",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/api/journeys": {
+      "get": {
+        "tags": [
+          "Journeys"
+        ],
+        "summary": "Read all data from journeys table",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/journeys/{page}/{limit}/{filter}": {
+      "get": {
+        "tags": [
+          "Journeys"
+        ],
+        "summary": "Az utazási ajánlatok lekérdezése szűréssel és paginálással",
+        "description": "",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1",
+            "description": "Hányadik oldaltól kezdjünk (min: 1)"
+          },
+          {
+            "name": "limit",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "2",
+            "description": "Mennyi rekord történjen küldésre oldalanként"
+          },
+          {
+            "name": "filter",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "tenger",
+            "description": "Csillag karakter (*), ha nincs szűrés."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/journeys/short": {
+      "get": {
+        "tags": [
+          "Journeys"
+        ],
+        "summary": "Read limited journey data",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/reserve": {
+      "post": {
+        "tags": [
+          "Reservations"
+        ],
+        "summary": "Create a new reservation",
+        "description": "Creates a new reservation for a journey. All fields are required.",
+        "responses": {
+          "201": {
+            "description": "Reservation successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "description": "ID of the newly created reservation"
+                    }
+                  },
+                  "example": {
+                    "id": 101
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request, validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "description": "Error message explaining why the request failed"
+                    }
+                  },
+                  "example": {
+                    "message": "A résztvevők számának nagyobbnak kell lennie nullánál."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "journeyId": {
+                    "type": "number",
+                    "description": "ID of the journey"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the participant"
+                  },
+                  "email": {
+                    "type": "string",
+                    "description": "Email address of the participant"
+                  },
+                  "numberOfParticipants": {
+                    "type": "number",
+                    "description": "Number of participants, between 1 and 49"
+                  },
+                  "lastCovidVaccineDate": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Date of the last COVID vaccine"
+                  },
+                  "acceptedConditions": {
+                    "type": "boolean",
+                    "description": "Whether the participant accepted the terms and conditions"
+                  }
+                },
+                "required": [
+                  "journeyId",
+                  "name",
+                  "email",
+                  "numberOfParticipants",
+                  "lastCovidVaccineDate",
+                  "acceptedConditions"
+                ],
+                "example": {
+                  "journeyId": 2,
+                  "name": "Kiss Dóra",
+                  "email": "kiss.dora@mail.hu",
+                  "numberOfParticipants": 2,
+                  "lastCovidVaccineDate": "2024-08-28",
+                  "acceptedConditions": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

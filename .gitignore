@@ -42,4 +42,3 @@ next-env.d.ts
 
 # data and backend folder for exam sources
 /data
-/backend
